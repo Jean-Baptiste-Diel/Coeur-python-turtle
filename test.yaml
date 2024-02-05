@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mon-application
+  namespace: test
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Jean-Baptiste-Diel/Coeur-python-turtle.git
+    targetRevision: HEAD
+    path: mon-chemin
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: test
